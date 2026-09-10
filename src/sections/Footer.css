@@ -1,0 +1,14 @@
+.footer { border-top: 1px solid var(--border); padding: 64px 0 0; }
+.footer__inner { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; padding-bottom: 48px; }
+.footer__logo { font-size: 22px; font-weight: 900; display: block; margin-bottom: 12px; }
+.footer__brand p { font-size: 13px; color: var(--text-muted); line-height: 1.8; }
+.footer__links a {
+  display: flex; align-items: center; gap: 10px;
+  color: var(--text-secondary); text-decoration: none; font-size: 14px;
+  transition: color 0.2s;
+}
+.footer__links a:hover { color: var(--text-primary); }
+.footer__bottom {
+  border-top: 1px solid var(--border); padding: 20px 0; text-align: center;
+}
+.footer__bottom p { font-size: 13px; color: var(--text-muted); }

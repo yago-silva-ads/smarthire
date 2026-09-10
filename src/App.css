@@ -1,0 +1,4 @@
+/* App layout — seções alternadas com fundo sutil */
+main > section:nth-child(even) {
+  background: var(--bg-secondary);
+}

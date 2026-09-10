@@ -1,0 +1,60 @@
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+.navbar--scrolled {
+  background: rgba(5, 7, 20, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 12px 0;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.5);
+}
+.navbar__inner {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.navbar__logo {
+  font-size: 22px; font-weight: 900; text-decoration: none;
+  color: var(--text-primary); letter-spacing: -0.5px;
+  display: flex; align-items: center; gap: 8px;
+}
+.navbar__logo-icon { font-size: 20px; }
+.navbar__links {
+  display: flex; align-items: center; gap: 32px; list-style: none;
+}
+.navbar__links a {
+  text-decoration: none; color: var(--text-secondary); font-size: 14px;
+  font-weight: 500; transition: color 0.2s;
+}
+.navbar__links a:hover { color: var(--text-primary); }
+.navbar__github-btn {
+  display: flex !important; align-items: center; gap: 6px;
+  padding: 8px 18px !important; background: rgba(255,255,255,0.08) !important;
+  border-radius: 50px; border: 1px solid rgba(255,255,255,0.12) !important;
+  color: var(--text-primary) !important;
+  transition: all 0.2s !important;
+}
+.navbar__github-btn:hover {
+  background: rgba(255,255,255,0.14) !important;
+  border-color: rgba(255,255,255,0.24) !important;
+}
+.navbar__burger { display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.navbar__burger span {
+  display: block; width: 22px; height: 2px; background: var(--text-primary);
+  border-radius: 2px; transition: all 0.3s;
+}
+@media (max-width: 768px) {
+  .navbar__burger { display: flex; }
+  .navbar__links {
+    display: none; position: fixed; top: 70px; left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    background: rgba(5,7,20,0.97); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border); padding: 16px 0;
+  }
+  .navbar__links--open { display: flex; }
+  .navbar__links li { width: 100%; }
+  .navbar__links a { display: block; padding: 14px 24px; font-size: 16px; }
+  .navbar__github-btn { margin: 8px 24px; }
+}
