@@ -1,0 +1,84 @@
+﻿.analyzing-page {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; position: relative; overflow: hidden;
+}
+.analyzing-center {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 28px; position: relative; z-index: 1;
+  padding: 40px 24px;
+}
+
+/* AI Brain */
+.ai-brain {
+  position: relative; width: 140px; height: 140px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 8px;
+}
+.ai-brain__ring {
+  position: absolute; border-radius: 50%; border: 2px solid transparent;
+}
+.ai-brain__ring--1 {
+  inset: 0; border-color: rgba(99,102,241,0.5) rgba(99,102,241,0.1) rgba(99,102,241,0.1) rgba(99,102,241,0.1);
+  animation: spin 1.2s linear infinite;
+}
+.ai-brain__ring--2 {
+  inset: 12px; border-color: transparent rgba(6,182,212,0.5) transparent rgba(6,182,212,0.1);
+  animation: spin 1.8s linear infinite reverse;
+}
+.ai-brain__ring--3 {
+  inset: 24px; border-color: rgba(16,185,129,0.4) transparent rgba(16,185,129,0.4) transparent;
+  animation: spin 2.5s linear infinite;
+}
+.ai-brain__core {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,0.3) 0%, rgba(5,7,20,0.9) 100%);
+  border: 1px solid rgba(99,102,241,0.4);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1; position: relative;
+  box-shadow: 0 0 30px rgba(99,102,241,0.4), inset 0 0 20px rgba(99,102,241,0.1);
+}
+.ai-brain__icon { font-size: 30px; transition: all 0.3s; }
+
+.analyzing-title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; }
+
+.analyzing-msg {
+  font-size: 15px; color: var(--text2);
+  padding: 10px 24px; border-radius: 50px;
+  background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+  min-width: 280px; transition: all 0.3s;
+}
+
+.analyzing-progress { width: 100%; max-width: 480px; }
+.analyzing-progress__bar {
+  height: 8px; background: rgba(255,255,255,0.08);
+  border-radius: 4px; overflow: hidden; margin-bottom: 8px;
+}
+.analyzing-progress__fill {
+  height: 100%; border-radius: 4px; background: var(--grad);
+  transition: width 0.4s ease; position: relative;
+}
+.analyzing-progress__fill::after {
+  content: ""; position: absolute; right: 0; top: 0; bottom: 0;
+  width: 40px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4));
+  animation: shimmer 1.5s infinite;
+}
+.analyzing-progress__pct { font-size: 13px; color: var(--purple); font-weight: 700; font-family: var(--mono); }
+
+.analyzing-log {
+  max-width: 400px; width: 100%; display: flex; flex-direction: column; gap: 6px;
+  max-height: 160px; overflow: hidden;
+}
+.analyzing-log__item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--text3); transition: all 0.3s;
+}
+.analyzing-log__item.active { color: var(--cyan); }
+.analyzing-log__item.done  { color: var(--green); }
+.analyzing-log__icon { font-size: 11px; font-family: var(--mono); }
+
+.analyzing-skills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 480px; }
+.analyzing-skill-pill {
+  padding: 4px 14px; border-radius: 50px; font-size: 12px; font-weight: 600;
+  background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25);
+  color: #a5b4fc; animation: fadeUp 0.4s ease both;
+}

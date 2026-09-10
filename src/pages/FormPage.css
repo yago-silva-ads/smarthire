@@ -1,0 +1,76 @@
+﻿.form-page { padding-top: 80px; position: relative; }
+.form-main { padding: 32px 24px 80px; max-width: 800px; position: relative; z-index: 1; }
+.form-back { margin-bottom: 24px; }
+
+.form-progress { margin-bottom: 32px; }
+.form-steps { display: flex; align-items: center; gap: 0; margin-bottom: 16px; }
+.form-step { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: var(--text3); flex: 1; }
+.form-step:not(:last-child)::after { content: ""; flex: 1; height: 1px; background: var(--border); margin: 0 12px; }
+.form-step.active { color: var(--text); }
+.form-step.done { color: var(--green); }
+.form-step__dot {
+  width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; flex-shrink: 0; transition: all 0.3s;
+}
+.form-step.active .form-step__dot { border-color: var(--purple); background: rgba(99,102,241,0.15); color: var(--purple); }
+.form-step.done   .form-step__dot { border-color: var(--green); background: rgba(16,185,129,0.15); color: var(--green); }
+
+.form-card { overflow: hidden; }
+.form-card__header {
+  padding: 24px 28px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,0.02);
+}
+.form-card__header h2 { font-size: 1.3rem; }
+.form-card__step { font-size: 13px; color: var(--text3); font-weight: 600; }
+.form-body { padding: 28px; display: flex; flex-direction: column; gap: 20px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-card__footer {
+  padding: 20px 28px; border-top: 1px solid var(--border);
+  display: flex; justify-content: flex-end; gap: 12px;
+  background: rgba(255,255,255,0.02);
+}
+.field-error { font-size: 12px; color: var(--red); font-weight: 500; }
+.field-hint  { font-size: 12px; color: var(--text3); }
+
+/* Skills */
+.skills-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.skills-header p { font-size: 14px; color: var(--text2); }
+.skills-count { font-size: 13px; color: var(--purple); font-weight: 700; padding: 4px 12px; background: rgba(99,102,241,0.12); border-radius: 50px; }
+.skills-section { display: flex; flex-direction: column; gap: 10px; }
+.skills-section-title { font-size: 12px; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 1px; }
+.skills-checkgrid { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-check {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border-radius: 50px; font-size: 13px; font-weight: 500;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border2);
+  cursor: pointer; transition: all 0.2s; user-select: none; color: var(--text2);
+}
+.skill-check input { display: none; }
+.skill-check:hover { border-color: var(--purple); color: var(--text); }
+.skill-check.checked { background: rgba(99,102,241,0.15); border-color: var(--purple); color: #a5b4fc; }
+.skill-check.required:hover, .skill-check.required.checked { border-color: #ef4444; color: #fca5a5; background: rgba(239,68,68,0.12); }
+.skill-check__box {
+  width: 18px; height: 18px; border-radius: 4px; border: 1.5px solid var(--border2);
+  display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0;
+  transition: all 0.2s;
+}
+.skill-check.checked .skill-check__box { background: var(--purple); border-color: var(--purple); color: #fff; }
+.skill-check.required.checked .skill-check__box { background: #ef4444; border-color: #ef4444; }
+
+/* Summary */
+.form-summary { padding: 20px; background: rgba(99,102,241,0.05); border-color: rgba(99,102,241,0.2) !important; }
+.form-summary__title { font-size: 13px; font-weight: 700; color: var(--text2); margin-bottom: 14px; }
+.form-summary__rows { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.form-summary__row { display: flex; justify-content: space-between; font-size: 13px; color: var(--text2); }
+.form-summary__row strong { color: var(--text); }
+.form-summary__skills { display: flex; flex-wrap: wrap; gap: 6px; }
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+  .form-body { padding: 20px; }
+  .form-card__header { padding: 18px 20px; }
+  .form-card__footer { padding: 16px 20px; flex-direction: column; }
+  .form-card__footer .btn { width: 100%; justify-content: center; }
+}
