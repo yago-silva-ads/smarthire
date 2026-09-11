@@ -2,37 +2,37 @@ import "./Funcionalidades.css"
 
 const FEATURES = [
   {
-    icon: "🤖",
+    icon: "",
     color: "purple",
-    title: "Triagem Automática por IA",
+    title: "Triagem Automática",
     desc: "O motor analisa cada candidato automaticamente, calculando score e aplicando limiares de aprovação e descarte sem intervenção humana.",
   },
   {
-    icon: "📊",
+    icon: "",
     color: "cyan",
     title: "Score de Compatibilidade",
     desc: "Algoritmo multicritério com pesos calibrados: 40% experiência, 30% habilidades, 30% compatibilidade técnica e salarial.",
   },
   {
-    icon: "📋",
+    icon: "",
     color: "green",
     title: "Gestão de Vagas",
     desc: "Cadastro completo com nível exigido, modalidade de contrato, habilidades obrigatórias e desejáveis, e salário base.",
   },
   {
-    icon: "👤",
+    icon: "",
     color: "pink",
     title: "Perfil de Candidatos",
     desc: "Armazena dados profissionais, currículo detalhado, habilidades, certificações e idiomas de cada candidato.",
   },
   {
-    icon: "👩‍💼",
+    icon: "",
     color: "orange",
     title: "Intervenção do Recrutador",
     desc: "Recrutadores podem aprovar ou reprovar manualmente candidatos em análise, complementando a triagem automática.",
   },
   {
-    icon: "📈",
+    icon: "",
     color: "purple",
     title: "Relatório de Triagem",
     desc: "Geração automática de resumo estatístico com totais por status: aprovados, em análise e descartados.",

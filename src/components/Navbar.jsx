@@ -23,7 +23,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="container navbar__inner">
         <a href="#home" className="navbar__logo">
-          <span className="navbar__logo-icon">⚡</span>
+          <span className="navbar__logo-icon"></span>
           Smart<span className="gradient-text">Hire</span>
         </a>
 

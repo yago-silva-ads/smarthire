@@ -23,10 +23,10 @@ export default function JobPage({ onApply, onDashboard }) {
           </p>
           <div className="job-hero__meta">
             {[
-              { icon: "🏢", text: VAGA.empresa },
-              { icon: "📍", text: VAGA.local },
-              { icon: "⏰", text: VAGA.carga },
-              { icon: "💻", text: VAGA.modalidade },
+              { icon: "", text: VAGA.empresa },
+              { icon: "", text: VAGA.local },
+              { icon: "", text: VAGA.carga },
+              { icon: "", text: VAGA.modalidade },
             ].map(m => (
               <span key={m.text} className="job-meta-pill">
                 {m.icon} {m.text}
@@ -41,14 +41,14 @@ export default function JobPage({ onApply, onDashboard }) {
 
             {/* About */}
             <div className="card job-card">
-              <h3>💼 Sobre a Vaga</h3>
+              <h3>Sobre a Vaga</h3>
               <p className="job-card__text">{VAGA.descricao}</p>
             </div>
 
             {/* Required skills */}
             <div className="card job-card">
-              <h3>🔴 Habilidades Obrigatórias</h3>
-              <p className="job-card__hint">Candidatos sem essas skills serão descarados pela IA</p>
+              <h3>Habilidades Obrigatórias</h3>
+              <p className="job-card__hint">Candidatos sem essas skills terão pontuação reduzida</p>
               <div className="skills-grid">
                 {VAGA.obrigatorias.map(s => (
                   <span key={s} className="skill-tag skill-tag--required">{s}</span>
@@ -58,7 +58,7 @@ export default function JobPage({ onApply, onDashboard }) {
 
             {/* Desired skills */}
             <div className="card job-card">
-              <h3>🟡 Habilidades Desejáveis</h3>
+              <h3>Habilidades Desejáveis</h3>
               <p className="job-card__hint">Aumentam significativamente sua pontuação</p>
               <div className="skills-grid">
                 {VAGA.desejaveis.map(s => (
@@ -69,7 +69,7 @@ export default function JobPage({ onApply, onDashboard }) {
 
             {/* Benefits */}
             <div className="card job-card">
-              <h3>🎁 Benefícios</h3>
+              <h3>Benefícios</h3>
               <div className="benefits-list">
                 {VAGA.beneficios.map(b => (
                   <div key={b} className="benefit-item">
@@ -104,10 +104,10 @@ export default function JobPage({ onApply, onDashboard }) {
               </div>
 
               <button onClick={onApply} className="btn btn-primary btn-lg" style={{width:"100%", justifyContent:"center"}}>
-                🚀 Candidatar-se agora
+                Candidatar-se agora
               </button>
               <p className="job-apply-card__note">
-                ⚡ Análise automática por IA — resultado imediato
+                Análise automática — resultado imediato
               </p>
 
               <div className="job-apply-card__divider" />
@@ -143,7 +143,7 @@ export default function JobPage({ onApply, onDashboard }) {
             </div>
 
             <button onClick={onDashboard} className="btn btn-ghost" style={{width:"100%", justifyContent:"center"}}>
-              📊 Painel do Recrutador
+              Painel do Recrutador
             </button>
           </div>
         </div>

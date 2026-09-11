@@ -46,7 +46,7 @@ export default function Hero() {
             <span className="hero__cursor">|</span>
           </span>
           <br />
-          <span className="gradient-text">com Inteligência Artificial</span>
+          <span className="gradient-text">Automatizada e Inteligente</span>
         </h1>
 
         <p className="hero__sub">
@@ -74,7 +74,7 @@ export default function Hero() {
             { value: "5", label: "Classes Java" },
             { value: "3", label: "Enumerações" },
             { value: "100", label: "Pts de Score" },
-            { value: "IA", label: "Triagem Auto" },
+            { value: "Auto", label: "Triagem" },
           ].map(s => (
             <div key={s.label} className="hero__stat">
               <span className="hero__stat-value gradient-text">{s.value}</span>

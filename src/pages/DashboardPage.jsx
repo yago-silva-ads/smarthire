@@ -38,11 +38,11 @@ export default function DashboardPage({ onBack, onNewCandidate }) {
         {/* Header */}
         <div className="dash-header">
           <div>
-            <h2>📊 Painel do Recrutador</h2>
+            <h2>Painel do Recrutador</h2>
             <p className="dash-subtitle">Vaga: Estágio em Desenvolvimento de Software</p>
           </div>
           <div className="dash-header-actions">
-            <button onClick={onNewCandidate} className="btn btn-primary btn-sm">➕ Novo candidato</button>
+            <button onClick={onNewCandidate} className="btn btn-primary btn-sm">Novo candidato</button>
             <button onClick={onBack} className="btn btn-ghost btn-sm">← Voltar</button>
           </div>
         </div>
@@ -50,11 +50,11 @@ export default function DashboardPage({ onBack, onNewCandidate }) {
         {/* Stats */}
         <div className="dash-stats">
           {[
-            { label: "Total Analisados", value: stats.total, color: "#6366f1", icon: "👥" },
+            { label: "Total Analisados", value: stats.total, color: "#6366f1", icon: "" },
             { label: "Aprovados",        value: stats.aprovados,   color: "#10b981", icon: "✅" },
             { label: "Em Análise",       value: stats.em_analise,  color: "#6366f1", icon: "🔵" },
             { label: "Descartados",      value: stats.descartados, color: "#ef4444", icon: "⛔" },
-            { label: "Score Médio",      value: stats.avgScore + "pts", color: "#f59e0b", icon: "⭐" },
+            { label: "Score Médio",      value: stats.avgScore + "pts", color: "#f59e0b", icon: "" },
           ].map(s => (
             <div key={s.label} className="card dash-stat">
               <span className="dash-stat__icon">{s.icon}</span>
@@ -80,7 +80,7 @@ export default function DashboardPage({ onBack, onNewCandidate }) {
           ))}
           {candidatos.length > 0 && (
             <button onClick={handleClear} className="btn btn-danger btn-sm" style={{marginLeft:"auto"}}>
-              🗑️ Limpar tudo
+              Limpar tudo
             </button>
           )}
         </div>
@@ -88,7 +88,7 @@ export default function DashboardPage({ onBack, onNewCandidate }) {
         {/* Table */}
         {filtered.length === 0 ? (
           <div className="dash-empty card">
-            <p className="dash-empty__icon">{candidatos.length === 0 ? "📭" : "🔍"}</p>
+            <p className="dash-empty__icon">{candidatos.length === 0 ? "" : ""}</p>
             <p className="dash-empty__title">
               {candidatos.length === 0 ? "Nenhum candidato analisado ainda" : "Nenhum candidato nesse filtro"}
             </p>
@@ -97,7 +97,7 @@ export default function DashboardPage({ onBack, onNewCandidate }) {
             </p>
             {candidatos.length === 0 && (
               <button onClick={onNewCandidate} className="btn btn-primary" style={{marginTop: 16}}>
-                🚀 Analisar primeiro candidato
+                Analisar primeiro candidato
               </button>
             )}
           </div>
@@ -159,7 +159,7 @@ export default function DashboardPage({ onBack, onNewCandidate }) {
           <div className="dash-modal-overlay" onClick={() => setDetail(null)}>
             <div className="card dash-modal" onClick={e => e.stopPropagation()}>
               <div className="dash-modal__header">
-                <h3>📋 Detalhes — {detail.nome}</h3>
+                <h3>Detalhes — {detail.nome}</h3>
                 <button onClick={() => setDetail(null)} className="btn btn-ghost btn-sm">✕</button>
               </div>
               <div className="dash-modal__body">

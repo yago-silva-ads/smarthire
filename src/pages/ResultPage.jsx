@@ -62,7 +62,7 @@ export default function ResultPage({ resultado, candidato, onNewCandidate, onDas
         <div className="result-grid">
           {/* Score breakdown */}
           <div className="card result-card">
-            <h3>📊 Detalhamento do Score</h3>
+            <h3>Detalhamento do Score</h3>
             <div className="score-breakdown">
               {Object.values(breakdown).map(c => (
                 <div key={c.label} className="score-component">
@@ -96,7 +96,7 @@ export default function ResultPage({ resultado, candidato, onNewCandidate, onDas
 
           {/* Skills analysis */}
           <div className="card result-card">
-            <h3>🛠️ Análise de Skills</h3>
+            <h3>Análise de Skills</h3>
 
             {matchedObrig.length > 0 && (
               <div className="skills-analysis-section">
@@ -109,7 +109,7 @@ export default function ResultPage({ resultado, candidato, onNewCandidate, onDas
 
             {missingObrig.length > 0 && (
               <div className="skills-analysis-section">
-                <p className="skills-analysis-label skills-missing">❌ Skills obrigatórias ausentes ({missingObrig.length})</p>
+                <p className="skills-analysis-label skills-missing">Skills obrigatórias ausentes ({missingObrig.length})</p>
                 <div className="skills-pills">
                   {missingObrig.map(s => <span key={s} className="badge badge-red">{s}</span>)}
                 </div>
@@ -118,7 +118,7 @@ export default function ResultPage({ resultado, candidato, onNewCandidate, onDas
 
             {matchedDesej.length > 0 && (
               <div className="skills-analysis-section">
-                <p className="skills-analysis-label skills-desired">⭐ Skills desejáveis que você tem ({matchedDesej.length})</p>
+                <p className="skills-analysis-label skills-desired">Skills desejáveis que você tem ({matchedDesej.length})</p>
                 <div className="skills-pills">
                   {matchedDesej.map(s => <span key={s} className="badge badge-orange">{s}</span>)}
                 </div>
@@ -144,7 +144,7 @@ export default function ResultPage({ resultado, candidato, onNewCandidate, onDas
         <div className="result-feedback card anim-fade-up" style={{borderColor: st.border, background: st.bg}}>
           <div className="result-feedback__icon">{st.emoji}</div>
           <div>
-            <strong style={{color: st.color}}>Feedback da IA SmartHire</strong>
+            <strong style={{color: st.color}}>Feedback do SmartHire</strong>
             <p>
               {status === "APROVADO"
                 ? `Excelente perfil! Você atendeu ${matchedObrig.length} de ${VAGA.obrigatorias.length} skills obrigatórias e demonstrou ${matchedDesej.length} habilidades desejáveis. Seu ${candidato.semestre}º semestre combina perfeitamente com o nível da vaga.`
@@ -157,10 +157,10 @@ export default function ResultPage({ resultado, candidato, onNewCandidate, onDas
 
         <div className="result-actions">
           <button onClick={onNewCandidate} className="btn btn-primary btn-lg">
-            🔄 Novo candidato
+            Novo candidato
           </button>
           <button onClick={onDashboard} className="btn btn-outline btn-lg">
-            📊 Ver painel do RH
+            Ver painel do RH
           </button>
         </div>
       </main>

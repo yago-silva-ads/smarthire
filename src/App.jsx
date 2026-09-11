@@ -10,7 +10,6 @@ import Topbar from "./components/Topbar"
 import "./index.css"
 import "./App.css"
 
-// Views: job | form | analyzing | result | dashboard
 export default function App() {
   const [view, setView] = useState("job")
   const [candidato, setCandidato] = useState(null)

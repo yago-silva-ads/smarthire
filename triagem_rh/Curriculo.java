@@ -1,16 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Representa o Currículo (CV) de um candidato.
- *
- * Esta classe é central no sistema de triagem: contém as informações
- * profissionais do candidato e fornece o método {@link #calcularCompatibilidade}
- * que faz o cruzamento automático com os requisitos de uma vaga.
- */
 public class Curriculo {
 
-    // ── Atributos ──────────────────────────────────────────────────────────────
+
     private String       id;
     private String       resumoProfissional;
     private String       formacaoAcademica;
@@ -19,7 +12,7 @@ public class Curriculo {
     private List<String> idiomas;
     private double       pretensaoSalarial;
 
-    // ── Construtores ───────────────────────────────────────────────────────────
+
     public Curriculo() {
         this.habilidadesTecnicas = new ArrayList<>();
         this.certificacoes       = new ArrayList<>();
@@ -34,22 +27,9 @@ public class Curriculo {
         this.pretensaoSalarial   = pretensaoSalarial;
     }
 
-    // ── Método de cálculo: compatibilidade com a vaga ─────────────────────────
-    /**
-     * Calcula o percentual de compatibilidade deste currículo com uma Vaga.
-     *
-     * Critérios avaliados:
-     *   1. Habilidades obrigatórias encontradas (peso 60%)
-     *   2. Habilidades desejáveis encontradas   (peso 20%)
-     *   3. Pretensão salarial dentro do range   (peso 20%)
-     *
-     * @param vaga vaga a ser comparada
-     * @return valor de 0.0 a 100.0 representando a compatibilidade percentual
-     */
     public double calcularCompatibilidade(Vaga vaga) {
         if (vaga == null) return 0.0;
 
-        // ── 1. Habilidades obrigatórias (60 pts) ─────────────────────────────
         List<String> obrigatorias = vaga.getHabilidadesObrigatorias();
         double scoreObrigatorio = 0.0;
         if (!obrigatorias.isEmpty()) {
@@ -59,10 +39,9 @@ public class Curriculo {
                 .count();
             scoreObrigatorio = (encontradas / (double) obrigatorias.size()) * 60.0;
         } else {
-            scoreObrigatorio = 60.0; // sem requisitos = 100% nesse critério
+            scoreObrigatorio = 60.0;
         }
 
-        // ── 2. Habilidades desejáveis (20 pts) ───────────────────────────────
         List<String> desejaveis = vaga.getHabilidadesDesejaveis();
         double scoreDesejavel = 0.0;
         if (!desejaveis.isEmpty()) {
@@ -75,21 +54,19 @@ public class Curriculo {
             scoreDesejavel = 20.0;
         }
 
-        // ── 3. Pretensão salarial (20 pts) ───────────────────────────────────
         double salarioBase = vaga.getSalarioBase();
-        double margem      = salarioBase * 0.20; // tolerância de 20%
+        double margem      = salarioBase * 0.20;
         double scoreSalario = 0.0;
         if (pretensaoSalarial <= salarioBase + margem) {
             scoreSalario = 20.0;
         } else if (pretensaoSalarial <= salarioBase + margem * 2) {
-            scoreSalario = 10.0; // aceitável com negociação
+            scoreSalario = 10.0;
         }
 
         double total = scoreObrigatorio + scoreDesejavel + scoreSalario;
         return Math.round(total * 100.0) / 100.0;
     }
 
-    // ── Getters & Setters ──────────────────────────────────────────────────────
     public String       getId()                  { return id; }
     public String       getResumoProfissional()  { return resumoProfissional; }
     public String       getFormacaoAcademica()   { return formacaoAcademica; }
@@ -110,7 +87,6 @@ public class Curriculo {
     public void adicionarCertificacao(String c)  { this.certificacoes.add(c); }
     public void adicionarIdioma(String i)        { this.idiomas.add(i); }
 
-    // ── toString ───────────────────────────────────────────────────────────────
     @Override
     public String toString() {
         return String.format(

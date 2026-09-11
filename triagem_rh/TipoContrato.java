@@ -1,6 +1,3 @@
-/**
- * Enum que representa as modalidades de contratação disponíveis no sistema.
- */
 public enum TipoContrato {
 
     CLT("CLT - Carteira Assinada"),

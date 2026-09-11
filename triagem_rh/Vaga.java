@@ -1,14 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Representa uma vaga de emprego publicada no sistema de triagem de RH.
- * Contém requisitos obrigatórios e desejáveis usados para cruzamento
- * automático com os currículos dos candidatos.
- */
 public class Vaga {
 
-    // ── Atributos ──────────────────────────────────────────────────────────────
     private String           id;
     private String           titulo;
     private String           descricao;
@@ -21,7 +15,6 @@ public class Vaga {
     private boolean          ativa;
     private int              vagasDisponiveis;
 
-    // ── Construtores ───────────────────────────────────────────────────────────
     public Vaga() {
         this.habilidadesObrigatorias = new ArrayList<>();
         this.habilidadesDesejaveis   = new ArrayList<>();
@@ -41,7 +34,6 @@ public class Vaga {
         this.vagasDisponiveis = vagasDisponiveis;
     }
 
-    // ── Getters & Setters ──────────────────────────────────────────────────────
     public String           getId()                       { return id; }
     public String           getTitulo()                   { return titulo; }
     public String           getDescricao()                { return descricao; }
@@ -67,7 +59,6 @@ public class Vaga {
     public void adicionarHabilidadeObrigatoria(String h) { this.habilidadesObrigatorias.add(h); }
     public void adicionarHabilidadeDesejavel(String h)   { this.habilidadesDesejaveis.add(h); }
 
-    // ── toString ───────────────────────────────────────────────────────────────
     @Override
     public String toString() {
         return String.format(

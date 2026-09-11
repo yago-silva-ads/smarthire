@@ -1,7 +1,3 @@
-/**
- * Enum que representa o nível de experiência profissional
- * exigido para uma vaga ou informado pelo candidato.
- */
 public enum NivelExperiencia {
 
     ESTAGIARIO("Estagiário",  0,  1, 0.6),
@@ -13,7 +9,7 @@ public enum NivelExperiencia {
     private final String descricao;
     private final int    anosMin;
     private final int    anosMax;
-    /** Multiplicador salarial base para cálculo de remuneração esperada */
+
     private final double multiplicadorSalarial;
 
     NivelExperiencia(String descricao, int anosMin, int anosMax, double multiplicadorSalarial) {
@@ -28,12 +24,6 @@ public enum NivelExperiencia {
     public int    getAnosMax()               { return anosMax; }
     public double getMultiplicadorSalarial() { return multiplicadorSalarial; }
 
-    /**
-     * Retorna o nível adequado com base nos anos de experiência informados.
-     *
-     * @param anos anos de experiência do candidato
-     * @return NivelExperiencia correspondente
-     */
     public static NivelExperiencia detectarNivel(int anos) {
         for (NivelExperiencia nivel : values()) {
             if (anos >= nivel.anosMin && anos < nivel.anosMax) {

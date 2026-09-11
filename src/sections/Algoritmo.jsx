@@ -2,13 +2,13 @@ import { useState } from "react"
 import "./Algoritmo.css"
 
 const WEIGHTS = [
-  { label: "Anos de Experiência", pct: 40, color: "#6366f1", icon: "💼", max: "15 anos = 40 pts" },
-  { label: "Habilidades Cadastradas", pct: 30, color: "#06b6d4", icon: "🛠️", max: "10 skills = 30 pts" },
-  { label: "Compatibilidade Técnica", pct: 30, color: "#10b981", icon: "🎯", max: "100% = 30 pts" },
+  { label: "Anos de Experiência", pct: 40, color: "#6366f1", icon: "", max: "15 anos = 40 pts" },
+  { label: "Habilidades Cadastradas", pct: 30, color: "#06b6d4", icon: "", max: "10 skills = 30 pts" },
+  { label: "Compatibilidade Técnica", pct: 30, color: "#10b981", icon: "", max: "100% = 30 pts" },
 ]
 
 const THRESHOLDS = [
-  { range: "0 – 29 pts", label: "Descartado", color: "#ef4444", icon: "⛔", desc: "Descarte automático pela IA" },
+  { range: "0 – 29 pts", label: "Descartado", color: "#ef4444", icon: "⛔", desc: "Descarte automático pelo sistema" },
   { range: "30 – 64 pts", label: "Em Análise", color: "#6366f1", icon: "🔵", desc: "Revisão manual pelo recrutador" },
   { range: "65 – 100 pts", label: "Aprovado", color: "#10b981", icon: "✅", desc: "Pré-aprovado para entrevista" },
 ]
@@ -24,7 +24,7 @@ export default function Algoritmo() {
   const total = Math.min(100, Math.round((scoreExp + scoreSkill + scoreCompat) * 10) / 10)
 
   const getStatus = (s) => {
-    if (s < 30) return { label: "Descartado pela IA", color: "#ef4444", icon: "⛔" }
+    if (s < 30) return { label: "Descartado", color: "#ef4444", icon: "⛔" }
     if (s < 65) return { label: "Em Análise", color: "#6366f1", icon: "🔵" }
     return { label: "Pré-Aprovado", color: "#10b981", icon: "✅" }
   }
@@ -70,7 +70,7 @@ export default function Algoritmo() {
           </div>
 
           <div className="glass-card algoritmo__simulator">
-            <h3 className="sim__title">🧮 Simulador de Score</h3>
+            <h3 className="sim__title">Simulador de Score</h3>
             <p className="sim__sub">Arraste os sliders para simular a pontuação</p>
 
             {[

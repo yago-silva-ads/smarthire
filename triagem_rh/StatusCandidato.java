@@ -1,13 +1,9 @@
-/**
- * Enum que representa os possíveis status de um candidato
- * durante o processo de triagem de RH.
- */
 public enum StatusCandidato {
 
     EM_ANALISE("Em Análise", "🔵"),
     APROVADO("Aprovado", "🟢"),
     REPROVADO("Reprovado", "🔴"),
-    DESCARTADO("Descartado pela IA", "⛔"),
+    DESCARTADO("Descartado", "⛔"),
     AGUARDANDO_ENTREVISTA("Aguardando Entrevista", "🟡"),
     CONTRATADO("Contratado", "⭐");
 

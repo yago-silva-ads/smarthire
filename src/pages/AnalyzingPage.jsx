@@ -2,14 +2,14 @@
 import "./AnalyzingPage.css"
 
 const STEPS_MSGS = [
-  { msg: "Recebendo currículo...", icon: "📥", pct: 5 },
-  { msg: "Extraindo habilidades técnicas...", icon: "🔍", pct: 20 },
+  { msg: "Recebendo currículo...", icon: "", pct: 5 },
+  { msg: "Extraindo habilidades técnicas...", icon: "", pct: 20 },
   { msg: "Verificando skills obrigatórias...", icon: "✅", pct: 38 },
-  { msg: "Calculando score de experiência...", icon: "💼", pct: 54 },
-  { msg: "Analisando compatibilidade salarial...", icon: "💰", pct: 68 },
-  { msg: "Computando score final...", icon: "🧮", pct: 82 },
-  { msg: "Tomando decisão automática...", icon: "🤖", pct: 94 },
-  { msg: "Análise concluída!", icon: "⚡", pct: 100 },
+  { msg: "Calculando score de experiência...", icon: "", pct: 54 },
+  { msg: "Analisando compatibilidade salarial...", icon: "", pct: 68 },
+  { msg: "Computando score final...", icon: "", pct: 82 },
+  { msg: "Tomando decisão automática...", icon: "", pct: 94 },
+  { msg: "Análise concluída!", icon: "", pct: 100 },
 ]
 
 export default function AnalyzingPage({ candidato, onDone }) {

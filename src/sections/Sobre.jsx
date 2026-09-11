@@ -23,10 +23,10 @@ export default function Sobre() {
             </p>
             <div className="sobre__highlights">
               {[
-                { icon: "🤖", text: "Descarte automático por IA abaixo de 30 pts" },
-                { icon: "✅", text: "Pré-aprovação acima de 65 pts" },
-                { icon: "👩‍💼", text: "Intervenção manual do recrutador" },
-                { icon: "📊", text: "Relatório estatístico por triagem" },
+                { icon: "", text: "Descarte automático abaixo de 30 pts" },
+                { icon: "", text: "Pré-aprovação acima de 65 pts" },
+                { icon: "", text: "Intervenção manual do recrutador" },
+                { icon: "", text: "Relatório estatístico por triagem" },
               ].map(h => (
                 <div key={h.text} className="sobre__highlight">
                   <span>{h.icon}</span>
@@ -47,14 +47,14 @@ export default function Sobre() {
             </div>
             <pre className="sobre__code">
 {`════════════════════════════════════
-  🤖 TRIAGEM AUTOMÁTICA — Java Pleno
+    TRIAGEM DE RH — Java Pleno
 ════════════════════════════════════
   Carlos Mendes   | Score: 59.3 | 🔵 Em Análise
   Bianca Torres   | Score: 40.7 | 🔵 Em Análise
   Roberto Faria   | Score: 12.0 | ⛔ Descartado
   Fernanda Cruz   | Score: 72.7 | ✅ Aprovado
 
-  📊 RESUMO:
+    RESUMO:
      Total    : 4
      Aprovados: 1
      Análise  : 2

@@ -2,27 +2,18 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * Motor de triagem automática do sistema de RH.
- *
- * Responsável por:
- * - Cruzar candidatos com vagas usando o score calculado;
- * - Descartar automaticamente candidatos abaixo do limiar mínimo;
- * - Gerar relatório do processo seletivo.
- */
 public class TriagemAutomatica {
 
-    // ── Constantes de limiar ───────────────────────────────────────────────────
-    private static final double LIMIAR_DESCARTE = 30.0;  // abaixo disso = descartado pela IA
-    private static final double LIMIAR_APROVADO = 65.0;  // acima disso = pré-aprovado
 
-    // ── Atributos ──────────────────────────────────────────────────────────────
+    private static final double LIMIAR_DESCARTE = 30.0;
+    private static final double LIMIAR_APROVADO = 65.0;
+
+
     private String          id;
     private Vaga            vaga;
     private List<Candidato> candidatos;
     private Recrutador      recrutadorResponsavel;
 
-    // ── Construtores ───────────────────────────────────────────────────────────
     public TriagemAutomatica() {
         this.candidatos = new ArrayList<>();
     }
@@ -34,34 +25,19 @@ public class TriagemAutomatica {
         this.recrutadorResponsavel = recrutador;
     }
 
-    // ── Métodos principais ─────────────────────────────────────────────────────
-
-    /**
-     * Registra um candidato na triagem.
-     *
-     * @param candidato candidato a ser adicionado
-     */
     public void adicionarCandidato(Candidato candidato) {
         if (candidato != null) {
             candidatos.add(candidato);
         }
     }
 
-    /**
-     * Executa a triagem automática em todos os candidatos registrados.
-     *
-     * Para cada candidato:
-     *   - Calcula a pontuação usando {@link Candidato#calcularPontuacao}
-     *   - Atualiza o status conforme os limiares definidos
-     *   - Imprime o resultado no console
-     */
     public void executarTriagem() {
         System.out.println("══════════════════════════════════════════════════════");
-        System.out.println("  🤖 TRIAGEM AUTOMÁTICA DE RH — " + (vaga != null ? vaga.getTitulo() : "VAGA SEM TÍTULO"));
+        System.out.println("  TRIAGEM DE RH — " + (vaga != null ? vaga.getTitulo() : "VAGA SEM TÍTULO"));
         System.out.println("══════════════════════════════════════════════════════");
 
         if (candidatos.isEmpty()) {
-            System.out.println("  ⚠️  Nenhum candidato registrado para triagem.");
+            System.out.println("  Nenhum candidato registrado para triagem.");
             return;
         }
 
@@ -84,11 +60,6 @@ public class TriagemAutomatica {
         gerarResumo();
     }
 
-    /**
-     * Retorna os candidatos aprovados, ordenados por pontuação (maior primeiro).
-     *
-     * @return lista de candidatos aprovados ordenada
-     */
     public List<Candidato> obterAprovados() {
         List<Candidato> aprovados = new ArrayList<>();
         for (Candidato c : candidatos) {
@@ -101,15 +72,12 @@ public class TriagemAutomatica {
         return aprovados;
     }
 
-    /**
-     * Gera e imprime um resumo estatístico da triagem.
-     */
     private void gerarResumo() {
         long aprovados   = candidatos.stream().filter(c -> c.getStatus() == StatusCandidato.APROVADO).count();
         long emAnalise   = candidatos.stream().filter(c -> c.getStatus() == StatusCandidato.EM_ANALISE).count();
         long descartados = candidatos.stream().filter(c -> c.getStatus() == StatusCandidato.DESCARTADO).count();
 
-        System.out.println("  📊 RESUMO DA TRIAGEM:");
+        System.out.println("  RESUMO DA TRIAGEM:");
         System.out.printf("     Total analisados : %d%n", candidatos.size());
         System.out.printf("     ✅ Aprovados      : %d%n", aprovados);
         System.out.printf("     🔵 Em análise     : %d%n", emAnalise);
@@ -117,7 +85,6 @@ public class TriagemAutomatica {
         System.out.println("══════════════════════════════════════════════════════");
     }
 
-    // ── Getters & Setters ──────────────────────────────────────────────────────
     public String          getId()                     { return id; }
     public Vaga            getVaga()                   { return vaga; }
     public List<Candidato> getCandidatos()             { return candidatos; }

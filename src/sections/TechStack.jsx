@@ -1,12 +1,12 @@
 import "./TechStack.css"
 
 const STACK = [
-  { name: "Java 21", desc: "Backend — classes, enums, OOP", icon: "☕", color: "orange" },
-  { name: "React 18", desc: "Frontend — SPA moderna", icon: "⚛️", color: "cyan" },
-  { name: "Vite", desc: "Build tool ultrarrápido", icon: "⚡", color: "purple" },
-  { name: "GitHub Pages", desc: "Hospedagem estática gratuita", icon: "🚀", color: "green" },
-  { name: "CSS Vanilla", desc: "Glassmorphism & animações", icon: "🎨", color: "pink" },
-  { name: "gh-pages", desc: "Deploy automatizado", icon: "📦", color: "orange" },
+  { name: "Java 21", desc: "Backend — classes, enums, OOP", icon: "", color: "orange" },
+  { name: "React 18", desc: "Frontend — SPA moderna", icon: "", color: "cyan" },
+  { name: "Vite", desc: "Build tool ultrarrápido", icon: "", color: "purple" },
+  { name: "GitHub Pages", desc: "Hospedagem estática gratuita", icon: "", color: "green" },
+  { name: "CSS Vanilla", desc: "Glassmorphism & animações", icon: "", color: "pink" },
+  { name: "gh-pages", desc: "Deploy automatizado", icon: "", color: "orange" },
 ]
 
 export default function TechStack() {
@@ -47,7 +47,7 @@ export default function TechStack() {
             target="_blank" rel="noopener noreferrer"
             className="btn btn-outline"
           >
-            📁 Código Java
+            Código Java
           </a>
         </div>
       </div>

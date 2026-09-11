@@ -1,14 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Representa um candidato no sistema de triagem de RH.
- * Armazena dados pessoais, profissionais e o status atual
- * dentro do processo seletivo.
- */
 public class Candidato {
 
-    // ── Atributos ──────────────────────────────────────────────────────────────
+
     private String           id;
     private String           nome;
     private String           email;
@@ -19,7 +14,6 @@ public class Candidato {
     private Curriculo        curriculo;
     private List<String>     habilidades;
 
-    // ── Construtores ───────────────────────────────────────────────────────────
     public Candidato() {
         this.habilidades = new ArrayList<>();
         this.status      = StatusCandidato.EM_ANALISE;
@@ -35,38 +29,22 @@ public class Candidato {
         this.nivel           = NivelExperiencia.detectarNivel(anosExperiencia);
     }
 
-    // ── Método de cálculo: pontuação geral do candidato ────────────────────────
-    /**
-     * Calcula a pontuação geral (score) do candidato com base em:
-     * - Anos de experiência (peso 40%)
-     * - Quantidade de habilidades cadastradas (peso 30%)
-     * - Nível de compatibilidade do currículo, se existir (peso 30%)
-     *
-     * Retorna um valor de 0.0 a 100.0.
-     *
-     * @param vagaReferencia vaga para cruzar compatibilidade
-     * @return pontuação de 0 a 100
-     */
     public double calcularPontuacao(Vaga vagaReferencia) {
-        // Componente 1 – Experiência (máx 40 pts)
-        int anosMaximos = 15; // referência de saturação
+        int anosMaximos = 15;
         double scoreExperiencia = Math.min(anosExperiencia, anosMaximos) / (double) anosMaximos * 40.0;
 
-        // Componente 2 – Habilidades (máx 30 pts)
         int habilidadesMax = 10;
         double scoreHabilidades = Math.min(habilidades.size(), habilidadesMax) / (double) habilidadesMax * 30.0;
 
-        // Componente 3 – Compatibilidade com a vaga via currículo (máx 30 pts)
         double scoreCompatibilidade = 0.0;
         if (curriculo != null && vagaReferencia != null) {
             scoreCompatibilidade = curriculo.calcularCompatibilidade(vagaReferencia) * 0.30;
         }
 
         double total = scoreExperiencia + scoreHabilidades + scoreCompatibilidade;
-        return Math.round(total * 100.0) / 100.0; // arredonda 2 casas
+        return Math.round(total * 100.0) / 100.0;
     }
 
-    // ── Getters & Setters ──────────────────────────────────────────────────────
     public String           getId()              { return id; }
     public String           getNome()            { return nome; }
     public String           getEmail()           { return email; }
@@ -79,8 +57,22 @@ public class Candidato {
 
     public void setId(String id)                          { this.id = id; }
     public void setNome(String nome)                      { this.nome = nome; }
-    public void setEmail(String email)                    { this.email = email; }
-    public void setTelefone(String telefone)              { this.telefone = telefone; }
+
+    public void setEmail(String email) {
+        if (email == null || !email.matches("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$")) {
+            throw new IllegalArgumentException("E-mail invalido: " + email);
+        }
+        this.email = email;
+    }
+
+    public void setTelefone(String telefone) {
+        String digits = telefone.replaceAll("\\D", "");
+        if (digits.length() < 10 || digits.length() > 11) {
+            throw new IllegalArgumentException("Telefone invalido (esperado 10 ou 11 digitos): " + telefone);
+        }
+        this.telefone = telefone;
+    }
+
     public void setStatus(StatusCandidato status)         { this.status = status; }
     public void setCurriculo(Curriculo curriculo)         { this.curriculo = curriculo; }
     public void setHabilidades(List<String> habilidades)  { this.habilidades = habilidades; }
@@ -88,10 +80,9 @@ public class Candidato {
 
     public void setAnosExperiencia(int anos) {
         this.anosExperiencia = anos;
-        this.nivel = NivelExperiencia.detectarNivel(anos); // recalcula nível
+        this.nivel = NivelExperiencia.detectarNivel(anos);
     }
 
-    // ── toString ───────────────────────────────────────────────────────────────
     @Override
     public String toString() {
         return String.format(

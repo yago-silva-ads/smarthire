@@ -5,7 +5,7 @@ export default function Topbar({ onHome, onDashboard, currentView }) {
     <nav className="topbar">
       <div className="container topbar__inner">
         <button onClick={onHome} className="topbar__logo">
-          ⚡ Smart<span className="grad-text">Hire</span>
+          Smart<span className="grad-text">Hire</span>
         </button>
         <div className="topbar__center">
           <span className="topbar__vaga">Estágio em Desenvolvimento de Software · São Paulo</span>
@@ -18,7 +18,7 @@ export default function Topbar({ onHome, onDashboard, currentView }) {
             onClick={onDashboard}
             className={`btn btn-sm ${currentView === "dashboard" ? "btn-primary" : "btn-outline"}`}
           >
-            📊 RH
+            RH
           </button>
         </div>
       </div>

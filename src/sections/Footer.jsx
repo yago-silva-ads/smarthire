@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__brand">
-          <span className="footer__logo">⚡ Smart<span className="gradient-text">Hire</span></span>
+          <span className="footer__logo">Smart<span className="gradient-text">Hire</span></span>
           <p>Projeto Acadêmico — Estrutura de Dados</p>
           <p>SENAC-SP · 2026</p>
         </div>
@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer__bottom">
-        <p>Feito com ☕ Java + ⚛️ React · Yago Silva · SENAC-SP 2026</p>
+        <p>Feito com Java + React · Yago Silva · SENAC-SP 2026</p>
       </div>
     </footer>
   )

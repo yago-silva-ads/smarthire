@@ -6,9 +6,9 @@
 <img src="https://img.shields.io/badge/GitHub%20Pages-Live-4078C8?style=for-the-badge&logo=github&logoColor=white" />
 <img src="https://img.shields.io/badge/SENAC--SP-2026-red?style=for-the-badge" />
 
-# ⚡ SmartHire — Triagem de RH com Inteligência Artificial
+# ⚡ SmartHire — Triagem de RH Automatizada
 
-> **Sistema moderno de triagem automática de currículos com scoring inteligente, descarte automático por IA e intervenção manual de recrutadores.**
+> **Sistema moderno de triagem automática de currículos com scoring inteligente, descarte automático e intervenção manual de recrutadores.**
 
 🌐 **[Ver site ao vivo →](https://yago-silva-ads.github.io/smarthire)**
 
@@ -26,9 +26,9 @@ O sistema automatiza a análise de currículos, calculando um **score de compati
 
 | Funcionalidade | Descrição |
 |---|---|
-| 🤖 **Triagem Automática** | Score calculado automaticamente para cada candidato |
+| ⚡ **Triagem Automática** | Score calculado automaticamente para cada candidato |
 | 📊 **Score Multicritério** | 40% experiência + 30% habilidades + 30% compatibilidade técnica |
-| ⛔ **Descarte Automático** | Candidatos < 30 pts descartados pela IA |
+| ⛔ **Descarte Automático** | Candidatos < 30 pts descartados automaticamente |
 | ✅ **Pré-aprovação** | Candidatos ≥ 65 pts marcados como pré-aprovados |
 | 👩‍💼 **Ação do Recrutador** | Aprovação/reprovação manual com justificativa |
 | 📈 **Relatório de Triagem** | Resumo estatístico automático por processo seletivo |
@@ -91,7 +91,7 @@ public double calcularPontuacao(Vaga vaga) {
 
 | Score | Status | Ação |
 |---|---|---|
-| `0 – 29` | ⛔ Descartado | Eliminação automática pela IA |
+| `0 – 29` | ⛔ Descartado | Eliminação automática pelo sistema |
 | `30 – 64` | 🔵 Em Análise | Revisão manual pelo recrutador |
 | `65 – 100` | ✅ Aprovado | Pré-aprovado para entrevista |
 
